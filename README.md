@@ -23,7 +23,17 @@ Um projeto Spring Boot para integração do MyAac com MercadoPago, focado em ger
 - Maven 3.6+
 - MariaDB Server
 
-## 📦 Instalação
+## 📦 Guia de Instalação no Ubuntu 24.04
+
+```bash
+sudo apt update && sudo apt upgrade -y
+
+sudo apt install openjdk-17-jdk -y
+java -version
+
+sudo apt install maven -y
+mvn -version
+```
 
 1. Clone o repositório:
 ```bash
@@ -37,11 +47,13 @@ cd myaac-mercadopago-integrator
 
 3. Crie um arquivo `.env` na raiz do projeto e configure:
 ```plaintext
+APP_PORT=8180
 DB_URL=JDBC_URL_CONNECTION
 DB_USERNAME=USUARIO
 DB_PASSWORD=SENHA
 DB_DRIVER=org.mariadb.jdbc.Driver
 INTEGRATOR_ACCESS_TOKEN=MERCADO_PAGO_ACCESS_TOKEN
+PAYMENT_CRON=0 */10 * ? * *
 ```
 
 4. Instale as dependências:
@@ -49,10 +61,7 @@ INTEGRATOR_ACCESS_TOKEN=MERCADO_PAGO_ACCESS_TOKEN
 mvn clean install
 ```
 
-5. Execute o script SQL para criar a tabela `MPPLAYERPAYMENT`:
-```bash
-mysql -u USUARIO -p < src/main/resources/schema.sql
-```
+5. Execute o script SQL em 'src/main/resources/schema.sql' para criar a tabela `MPPLAYERPAYMENT`:
 
 6. Inicie o projeto:
 ```bash
