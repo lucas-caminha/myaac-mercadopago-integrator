@@ -1,13 +1,11 @@
-# 🛠️ MercadoPago Integrator
+# 🛠️ MyAac X MercadoPago Integrator
 
-Um projeto Spring Boot para integração com MercadoPago, focado em gerenciamento de pagamentos Pix e administração de contas.
+Um projeto Spring Boot para integração do MyAac com MercadoPago, focado em geração de pagamentos Pix e consulta de pagamentos.
 
 ## 🚀 Funcionalidades
 
-- Integração com MercadoPago para pagamentos Pix.
-- Gerenciamento de contas e transações.
-- Validação de dados via annotations.
-- Atualização de status de pagamentos.
+- Integração com MercadoPago para geração de QRCODE e pagamentos Pix.
+- Integração com Mercado pago para verificação de pagamento e atualização de valores dentro do MyAac.
 
 ## 💻 Tecnologias Usadas
 
