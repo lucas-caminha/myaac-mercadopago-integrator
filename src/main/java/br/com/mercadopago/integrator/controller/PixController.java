@@ -23,8 +23,11 @@ import br.com.mercadopago.integrator.request.CreatePixPaymentRequest;
 import br.com.mercadopago.integrator.response.PixCreationResponse;
 import br.com.mercadopago.integrator.service.PlayerPaymentService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
 @RequestMapping("/api/v1/pix")
+@Tag(name = "Pix", description = "Endpoints related to generating pix payments")
 public class PixController {
 	
 	@Autowired

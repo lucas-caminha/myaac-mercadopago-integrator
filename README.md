@@ -13,7 +13,7 @@ Um projeto Spring Boot para integração do MyAac com MercadoPago, focado em ger
 - **Spring Boot**
 - **Spring Data JPA**
 - **Hibernate**
-- **MySQL**
+- **MariaDB**
 - **Jakarta Persistence API**
 - **Dotenv** 
 
@@ -21,7 +21,7 @@ Um projeto Spring Boot para integração do MyAac com MercadoPago, focado em ger
 
 - Java 17+
 - Maven 3.6+
-- MySQL Server
+- MariaDB Server
 
 ## 📦 Instalação
 
@@ -40,7 +40,7 @@ cd myaac-mercadopago-integrator
 DB_URL=JDBC_URL_CONNECTION
 DB_USERNAME=USUARIO
 DB_PASSWORD=SENHA
-DB_DRIVER=com.mysql.cj.jdbc.Driver
+DB_DRIVER=org.mariadb.jdbc.Driver
 INTEGRATOR_ACCESS_TOKEN=MERCADO_PAGO_ACCESS_TOKEN
 ```
 
@@ -49,7 +49,12 @@ INTEGRATOR_ACCESS_TOKEN=MERCADO_PAGO_ACCESS_TOKEN
 mvn clean install
 ```
 
-5. Inicie o projeto:
+5. Execute o script SQL para criar a tabela `MPPLAYERPAYMENT`:
+```bash
+mysql -u USUARIO -p < src/main/resources/schema.sql
+```
+
+6. Inicie o projeto:
 ```bash
 mvn spring-boot:run
 ```
@@ -83,30 +88,7 @@ http://localhost:8080
 http://localhost:8080/swagger-ui
 ```
 
-## 🤝 Contribuição
-
-1. Faça um Fork do projeto.
-2. Crie uma branch com sua funcionalidade:
-```bash
-git checkout -b minha-feature
-```
-3. Commit suas alterações:
-```bash
-git commit -m 'Minha nova feature'
-```
-4. Faça um Push:
-```bash
-git push origin minha-feature
-```
-5. Abra um Pull Request.
-
-## 📝 Licença
-
-Este projeto está sob a licença MIT.
-
----
-
-**Desenvolvido com ❤️ por [CAMINHA]**
+**Desenvolvido por [CAMINHA]**
 
 Caso tenha alguma dúvida, entre em contato!
 
